@@ -1,4 +1,3 @@
-from sqlite3 import connect
 import bcrypt
 from flask import Flask
 from flask_bcrypt import Bcrypt
