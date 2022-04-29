@@ -4,6 +4,11 @@
 Using Flask to build a Restful API Server for Roomie.
 
 ## Project setup
+### Requirement software:
+* python 3.8
+* pip3
+* Nodejs
+* IDE, VSCode recommended
 Virtual environment setup
 ```
 $ pip3 install virtualenv && virtualenv venv
