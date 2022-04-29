@@ -3,7 +3,6 @@ import bcrypt
 
 from flask import Flask
 from flask_bcrypt import Bcrypt
-from flask_login import LoginManager
 from flask_cors import CORS
 from flask_mongoengine import MongoEngine
 
@@ -15,10 +14,10 @@ app = Flask(__name__)
 
 app.config.from_pyfile('config.py')
 app.config['MONGODB_SETTINGS'] = mongoEngineConfig
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 CORS(app)
 bcrypt = Bcrypt(app)
-loggin = LoginManager(app)
 init_database(app)
 
 app.register_blueprint(userRoutes, url_prefix='/api/v1')
