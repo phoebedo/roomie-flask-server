@@ -28,12 +28,18 @@ def get_user_by_id(id: str):
 @userRoutes.route('/user', methods=['POST'])
 def create_user():
     data = request.get_json()
+    # print(data)
 
-    new_user = User(
-        username=data.username,
-        email=data.email,
-        password=data.password
+    new_user = Users(
+        # username=data.username,
+        # email=data.email,
+        # password=data.password
+        username=data["username"],
+        email=data["email"],
+        password=data["password"]
     )
     new_user.save(force_insert=True)
 
     return jsonify(new_user), 201
+
+
