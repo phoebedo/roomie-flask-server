@@ -8,6 +8,7 @@ from flask_mongoengine import MongoEngine
 
 from config import mongoEngineConfig
 from api.routes.userRoutes import userRoutes
+from api.routes.houseRoutes import houseRoutes
 from api.database.db import init_database
 
 app = Flask(__name__)
@@ -21,5 +22,6 @@ bcrypt = Bcrypt(app)
 init_database(app)
 
 app.register_blueprint(userRoutes, url_prefix='/api/v1')
+app.register_blueprint(houseRoutes, url_prefix='/api/v1')
 if __name__ == "__main__":
     app.run()
